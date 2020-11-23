@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <script>
+        // 获取元素
+        let setBtn = document.querySelector(".set");
+        let getBtn = document.querySelector(".get");
+
+        let arr = [
+            {id: 2, name: "lw", age: 30},
+            {id: 2, name: "xm", age: 26},
+            {id: 2, name: "xhei", age: 32},
+            {id: 2, name: "ww", age: 19},
+        ];
+
+        setBtn.onclick=function(){
+            let str=JSON.stringify(arr)
+            localStorage.setItem('info',str)
+        }
+
+        getBtn.onclick=function(){
+            let data=localStorage.getItem('info')
+            JSON.parse
+            console.log(JSON.parse(data))
+        }
+    </script>
+</body>
+</html>

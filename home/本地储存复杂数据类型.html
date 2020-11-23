@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <script>
+        // 获取元素
+        let setBtn = document.querySelector(".set");
+        let getBtn = document.querySelector(".get");
+
+        let arr = [
+            {id: 1, name: "lw", age: 30},
+            {id: 1, name: "xm", age: 26},
+            {id: 1, name: "xhei", age: 32},
+            {id: 1, name: "ww", age: 19},
+        ];
+
+        setBtn.onclick=function () {
+            //  复杂数据类型，储存前需要先序列化
+            let str=JSON.stringify(arr)
+            console.log(str)
+            localStorage.setItem('info',str)
+        }
+
+        getBtn.onclick=function(){
+            let res=localStorage.getItem('info')
+            // 复杂数据类型，获取前需要先反序列化
+            let data=JSON.parse(res)
+            console.log(data)
+
+        }
+    </script>
+</body>
+</html>
