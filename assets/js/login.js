@@ -75,7 +75,7 @@ $(function () {
             {time:2},//设置延时时间
             function () {
               // 跳转页面
-              location.href='index.html'
+              location.href='/home/index.html'
             }
             )
          }

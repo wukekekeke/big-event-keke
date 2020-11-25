@@ -1,11 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>后台主页</title>
+  <!-- 一开始就验证token是否存在，可以没有一闪而过的效果 -->
+  <script>
+    let token=localStorage.getItem('token')
+    if(!token){
+      location.href='/home/login.html'
+    }
+    else{
+      // location.href='/home/index.html'
+      console.log('正常登录可以跳转')
+    }      
+  </script>
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="/assets/fonts/iconfont.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
 </head>
-<body>
-    <h1>这里是主页</h1>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">
+        <img src="/assets/images/logo.png" alt="">
+    </div>
+    <!-- 头部区域 -->
+
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+            <!-- 头像 -->
+            <!-- 用户设置了头像 图片头像-->
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          <!-- 用户没有设置头像 文字头像 -->
+          <span class="text-avatar">A</span>
+          个人中心
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">更换头像</a></dd>
+          <dd><a href="">重置密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item" id="logoutBtn"><a href="javascript:void(0)">退出</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域 -->
+      <!-- 头像 -->
+      <div class="userInfo">
+            <!-- 用户设置了头像 图片头像-->
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+            <!-- 用户没有设置头像 文字头像 -->
+            <span class="text-avatar">A</span>
+            <span id="welcome">欢迎 aa</span>
+      </div>
+
+      <!-- 导航区域 -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test"  lay-shrink="all">
+        <li class="layui-nav-item layui-this">
+            <a href=""><span class="iconfont icon-home"></span>首页</a>
+        </li>
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 文章类别</a></dd>
+            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
+            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发布文章</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
+            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
+            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <iframe src="/home/dashboard.html" name="iframe" frameborder="0"></iframe>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © www.itheima.com - 黑马程序员
+  </div>
+</div>
+<script src="/assets/lib/layui/layui.all.js"></script>
+<script src="/assets/lib/jquery.js"></script>
+<script src="/assets/js/base.js"></script>
+<script src="/assets/js/index.js"></script>
+
 </body>
 </html>
