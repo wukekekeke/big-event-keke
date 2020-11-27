@@ -15,7 +15,7 @@ $.ajaxPrefilter(function (options) {
      // 请求完成后执行的函数（成功或失败都会执行）
      options.complete=function (xhr) {
           //  形参会拿到xhr对象
-          console.log(xhr)
+          // console.log(xhr)
           if(xhr.responseJSON.status===1&&xhr.responseJSON.message==='身份认证失败！'){
                // 清除token数据
                localStorage.removeItem('token')

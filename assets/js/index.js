@@ -1,6 +1,5 @@
-$(function () {
-    //  获取用户的基本信息
-    let layer=layui.layer
+// 作为全局变量，方便在其他子页面中获取
+function getUserInfo() {
     $.ajax({
         url:'/my/userinfo',
         // 放到base.js中
@@ -23,8 +22,10 @@ $(function () {
             // 2 再处理头像
             if(res.data.user_pic){
             // 如果用户设置了头像，就用图片
-                $('.layui-nav-img').attr('src','res.data.user_pic').show()
+                $('.layui-nav-img').attr('src',res.data.user_pic).show()
                 $('.text-avatar').hide()
+            
+                // contents().find("#iBtnOk").click(); // ifm 为 <iframe> 标签 id; iBtnOk 为子页面按钮 id
             }else{
             // 如果用户没有设置头像，就显示大写字母
                 $('.layui-nav-img').hide()
@@ -33,7 +34,24 @@ $(function () {
         }
         
     })
+}
 
+
+
+
+
+window.onload = function () {
+    console.log( window.frames[0].hello(),'4555' );
+}
+$(function () {
+    // console.log( window.frames[0].a,'4555' );
+    // setTimeout(()=>{
+    //     console.log( iframe.window,'4555' );
+    // })
+    //  获取用户的基本信息
+    let layer=layui.layer
+    //调用全局的信息获取函数
+    getUserInfo()
     // 退出
     $('#logoutBtn').click(function (e) {
         // e.stopPropagation()
