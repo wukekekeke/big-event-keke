@@ -7,7 +7,7 @@ function getUserInfo() {
         //     Authorization:localStorage.getItem('token')
         // },
         success:function (res) {
-             console.log(res);
+            //  console.log(res);
              if(res.status===1){
                  return layer.msg("获取用户基本信息失败！")
              }
@@ -40,9 +40,9 @@ function getUserInfo() {
 
 
 
-window.onload = function () {
-    console.log( window.frames[0].hello(),'4555' );
-}
+// window.onload = function () {
+//     console.log( window.frames[0].hello(),'4555' );
+// }
 $(function () {
     // console.log( window.frames[0].a,'4555' );
     // setTimeout(()=>{

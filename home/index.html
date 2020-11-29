@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>后台主页</title>
+  <title>keke 后台主页</title>
   <!-- 一开始就验证token是否存在，可以没有一闪而过的效果 -->
   <script>
     let token=localStorage.getItem('token')
@@ -67,9 +67,10 @@
         <li class="layui-nav-item">
           <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 文章类别</a></dd>
-            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
-            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发布文章</a></dd>
+            <dd><a href="/article/category.html" target ='iframe'><i class="layui-icon layui-icon-app"></i> 文章类别</a></dd>
+            <dd><a href="/article/category 2.html" target ='iframe'><i class="layui-icon layui-icon-app"></i> 文章类别 2</a></dd>
+            <dd><a href="/article/list.html" target="iframe"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
+            <dd><a href="/article/publish.html" target="iframe"><i class="layui-icon layui-icon-app"></i>发布文章</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
@@ -86,8 +87,8 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <!-- <iframe src="/home/dashboard.html" name="iframe" frameborder="0"></iframe> -->
-    <iframe src="/user/user_avater.html" name="iframe" frameborder="0"></iframe>
+    <iframe src="/home/dashboard.html" name="iframe" frameborder="0"></iframe>
+    <!-- <iframe src="/article/list.html" name="iframe" frameborder="0"></iframe> -->
   
   <div class="layui-footer">
     <!-- 底部固定区域 -->

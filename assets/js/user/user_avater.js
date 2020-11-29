@@ -26,9 +26,7 @@ $(function () {
             if(res.status!==0){
                 return layer.msg('获取用户信息失败')
             }
-            console.log(res,6666);
-            $('#image').attr('src',res.data.user_pic)
-
+            
             $image
             .cropper("destroy") // 销毁旧的裁剪区域
             .attr("src", res.data.user_pic) // 重新设置图片路径
